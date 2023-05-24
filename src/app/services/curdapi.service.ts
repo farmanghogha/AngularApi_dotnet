@@ -12,22 +12,22 @@ export class CurdapiService {
   baseapiurl = environment.roorapipath;
   constructor(private httpclient: HttpClient) { }
   // get all Student from database
-  getstudent(): Observable<IStudent[]> {
-    return this.httpclient.get<IStudent[]>(this.baseapiurl + 'Getallstudent');
+  getstudent(): Observable<any> {
+    return this.httpclient.get(this.baseapiurl + 'Getallstudent');
   }
 
 
   // Add Student in database
-  addstudent(student: IStudent): Observable<IStudent> {
-    return this.httpclient.post<IStudent>(this.baseapiurl + 'Addstudent', student);
+  addstudent(student: IStudent): Observable<any> {
+    return this.httpclient.post(this.baseapiurl + 'Addstudent', student);
   }
   //get student by id
-  editstudent(id: number): Observable<IStudent> {
-    return this.httpclient.get<IStudent>(this.baseapiurl + 'editstudent/?id=' + id);
+  editstudent(id: number): Observable<any> {
+    return this.httpclient.get(this.baseapiurl + 'editstudent/?id=' + id);
   }
  // Edit Student in database 
-  updatestudent(student: IStudent): Observable<IStudent> {
-    return this.httpclient.put<IStudent>(this.baseapiurl + 'updatestudent', student);
+  updatestudent(student: IStudent): Observable<any> {
+    return this.httpclient.put(this.baseapiurl + 'updatestudent', student);
   }
 
  // delete student from database

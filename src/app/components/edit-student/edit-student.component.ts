@@ -36,10 +36,10 @@ export class EditStudentComponent implements OnInit {
          this.httpservice.editstudent(Number.parseInt(id)).subscribe({
         next:(res)=>{            
             this.editstud.patchValue({
-              "sid":res.sId,
-              "name":res.name,
-              "age":res.age,
-              "phone":res.phone
+              "sid":res.data.sId,
+              "name":res.data.name,
+              "age":res.data.age,
+              "phone":res.data.phone
             })
           },
           error:(err)=>{

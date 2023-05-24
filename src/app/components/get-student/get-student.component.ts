@@ -24,9 +24,10 @@ export class GetStudentComponent implements OnInit {
   ngOnInit(): void {
     this.spinner.show();
     this.http.getstudent().subscribe({
-      next:(student)=>{
+      next:(res)=>{
+        debugger
         this.spinner.hide();
-        this.studentData=student;        
+        this.studentData=res.data;        
       },
       error:(err)=>{
         console.log(err);
