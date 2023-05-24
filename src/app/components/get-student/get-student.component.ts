@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { IStudent } from 'src/app/interface/student';
 import { CurdapiService } from 'src/app/services/curdapi.service';
 import Swal from 'sweetalert2';
@@ -17,11 +18,14 @@ export class GetStudentComponent implements OnInit {
 
   constructor(
     private http:CurdapiService,
+    private spinner: NgxSpinnerService
     ) { }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.http.getstudent().subscribe({
       next:(student)=>{
+        this.spinner.hide();
         this.studentData=student;        
       },
       error:(err)=>{

@@ -8,7 +8,8 @@ import { AddStudentComponent } from './components/add-student/add-student.compon
 import { EditStudentComponent } from './components/edit-student/edit-student.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,10 @@ import { ToastrModule } from 'ngx-toastr';
       timeOut: 10000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
+    }),
+    BrowserAnimationsModule,
+    NgxSpinnerModule.forRoot({
+      type: 'ball-scale-multiple'
     }),
   ],
   providers: [],
