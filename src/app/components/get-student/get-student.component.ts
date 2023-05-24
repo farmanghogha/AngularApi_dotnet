@@ -15,13 +15,14 @@ export class GetStudentComponent implements OnInit {
  studentData:IStudent[] = []; 
  
 
-  constructor(private http:CurdapiService,private route:Router) { }
+  constructor(
+    private http:CurdapiService,
+    ) { }
 
   ngOnInit(): void {
     this.http.getstudent().subscribe({
       next:(student)=>{
-        this.studentData=student;
-        console.log(student);
+        this.studentData=student;        
       },
       error:(err)=>{
         console.log(err);

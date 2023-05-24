@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { IStudent } from 'src/app/interface/student';
 import { CurdapiService } from 'src/app/services/curdapi.service';
 
 @Component({
@@ -12,14 +11,7 @@ import { CurdapiService } from 'src/app/services/curdapi.service';
 })
 export class EditStudentComponent implements OnInit {
   editstud:FormGroup;
-  // stddetails:IStudent={
-  //   sId:0,
-  //   name:'',
-  //   phone:'',
-  //   age:0
-
-  // }
-
+  
   constructor(
     private fb:FormBuilder,
     private httpservice:CurdapiService,
