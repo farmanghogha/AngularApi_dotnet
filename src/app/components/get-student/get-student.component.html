@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row m-4">
+        <div class="row mb-2">
+            <div class="col-6">
+                <h1>Student List</h1>
+            </div>
+            <div class="col-6 text-end">
+                <a class="btn btn-primary" routerLink="/addstudent"><i class="bi bi-plus-circle"></i> Add Student </a>
+            </div>
+           <hr>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table  table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Phone</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of studentData">
+                            <td width="30">{{data.sId}}</td>
+                            <td width="30">{{data.name}}</td>
+                            <td width="30">{{data.age}}</td>
+                            <td width="30">{{data.phone}}</td>
+                            <td width="30">
+                                <a class="btn btn-primary" [routerLink]="['/editstudent',data.sId]"><i class="bi bi-pencil-square"></i> Edit</a>&nbsp;
+                                <a class="btn btn-danger" (click)="onDelete(data.sId)"><i class="bi bi-trash"></i> Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
